@@ -51,7 +51,8 @@ body {
 .button {
   display: inline-block;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
   font-weight: bold;
   
   padding: 15px 30px;
@@ -71,6 +72,70 @@ body {
   background-color: var(--primary);
   color: var(--dark);
 }
+
+
+
+
+/*----------------------------------*/
+/*TABLE*/
+/*----------------------------------*/
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-block: 20px;
+}
+
+.table td {
+  padding: 8px 12px;
+  border: 1px solid var(--light-gray);
+}
+
+.table tr:hover {
+  background: lightblue;
+}
+
+
+
+/*----------------------------------*/
+/*FORMULÁŘ*/
+/*----------------------------------*/
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-field input {
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.form-section {
+  margin-block: 30px;
+}
+
+.form-tile {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+}
+
+.form-tile-img {
+  width: 150px;
+
+}
+
+.form-tile-price {
+  font-weight: bold;
+}
+
 
 
 

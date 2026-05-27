@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dlažba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+    <header class="header">
+        <img src="images/logo_cach.svg" alt="logo" class="logo">
+    </header>
+    <main class="main">
+        <h1 id="form-name">Nová místnost</h1>
+        <ul id="error-list">
+
+        </ul>
+        <form id="form">
+            <div class="form-field">
+                <label for="name">Název místnosti:</label>
+                <input type="text" id="name"> 
+            </div>
+            <div class="form-field">
+                <label for="width">Šířka místnosti:</label>
+                <input type="number" id="width"> cm
+            </div>
+            <div class="form-field">
+                <label for="lenght">Délka místnosti:</label>
+                <input type="number" id="lenght"> cm
+            </div>
+            <div class="form-field">
+                <label for="height">Výška obkladu stěn:</label>
+                <input type="number" id="height"> cm
+            </div>
+            <div class="form-field">
+                <label for="joint">Šířka spáry:</label>
+                <input type="number" id="joint"> mm
+            </div>
+            <div class="form-section">
+                <button id="floor-tile-btn" class="button">Vybrat dlažbu</button>
+                <input type="hidden" id="floor-tile-id">
+                <div id="floor-tile" class="form-tile">
+                    <img src="images/dlaszbitch.webp" alt="" id="floor-tile-img" class="form-tile-img">
+                    <div class="form-tile-text">
+                        <h3 id="floor-tile-name" class="form-tile-name">Dlaždička</h3>
+                        <p id="floor-tile-size" class="form-tile-size">30 x 30 cm</p>
+                        <p class="form-tile-price" ><span id="floor-tile-price">500</span> Kč/m<sup>2</sup></p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <button id="wall-tile-btn" class="button">Vybrat obklad</button>
+                <input type="hidden" id="wall-tile-id">
+                <div id="wall-tile" class="form-tile">
+                    <img src="images/dlaszbitch.webp" alt="" id="wall-tile-img" class="form-tile-img">
+                    <div class="form-tile-text">
+                        <h3 id="wall-tile-name" class="form-tile-name">Dlaždička</h3>
+                        <p id="wall-tile-size" class="form-tile-size">30 x 30 cm</p>
+                        <p class="form-tile-price" ><span id="wall-tile-price">500</span> Kč/m<sup>2</sup></p>
+                    </div>
+                </div>
+            </div>
+            <button class="button" type="submit">Uložit</button>
+            <a class="button" href="mujdum.html">Zpět na můj dům</a>
+        </form>
+    </main>
+    </div>
+    <script src="js/mistnost.js"></script>
+</body>
+</html>
