@@ -1,6 +1,6 @@
 const API = "https://cach.czchts.cz/api";
 
-let currentRooms = [];
+let currentTiles = [];
 
 const divTiles = document.querySelector('.products')
 
@@ -9,8 +9,8 @@ async function getTiles() {
     console.log(response);
     const json = await response.json();
     console.log(json);
-    currentRooms = json;
-    showTiles(currentRooms)
+    currentTiles = json;
+    showTiles(currentTiles)
 }
 
 function showTiles(tiles) {

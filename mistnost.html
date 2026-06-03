@@ -47,9 +47,9 @@
                 <div id="floor-tile" class="form-tile">
                     <img src="images/dlaszbitch.webp" alt="" id="floor-tile-img" class="form-tile-img">
                     <div class="form-tile-text">
-                        <h3 id="floor-tile-name" class="form-tile-name">Dlaždička</h3>
-                        <p id="floor-tile-size" class="form-tile-size">30 x 30 cm</p>
-                        <p class="form-tile-price" ><span id="floor-tile-price">500</span> Kč/m<sup>2</sup></p>
+                        <h3 id="floor-tile-name" class="form-tile-name"></h3>
+                        <p id="floor-tile-size" class="form-tile-size"></p>
+                        <p class="form-tile-price" id="floor-tile-price"></p>
                     </div>
                 </div>
             </div>
@@ -59,15 +59,30 @@
                 <div id="wall-tile" class="form-tile">
                     <img src="images/dlaszbitch.webp" alt="" id="wall-tile-img" class="form-tile-img">
                     <div class="form-tile-text">
-                        <h3 id="wall-tile-name" class="form-tile-name">Dlaždička</h3>
-                        <p id="wall-tile-size" class="form-tile-size">30 x 30 cm</p>
-                        <p class="form-tile-price" ><span id="wall-tile-price">500</span> Kč/m<sup>2</sup></p>
+                        <h3 id="wall-tile-name" class="form-tile-name"></h3>
+                        <p id="wall-tile-size" class="form-tile-size"></p>
+                        <p id="wall-tile-price" class="form-tile-price" ></p>
                     </div>
                 </div>
             </div>
             <button class="button" type="submit">Uložit</button>
             <a class="button" href="mujdum.html">Zpět na můj dům</a>
         </form>
+
+        <div class="dialog">
+            <button class="dialog-close">x</button>
+            <div class="tiles">
+                <div class="tile">
+                    <img src="images/dlaszbitch.webp" alt="" class="tile-img">
+                    <div class="tile-content">
+                        <h3 class="tile-name">Dlaždička</h3>
+                        <p class="tile-maker">Dalžba s.r.o.</p>
+                        <p class = "tile-price">9 999 Kč za m<sup>2</sup></p>
+                    </div>
+                    <button class="button">Detail</button>
+                </div>
+            </div>
+        </div>
     </main>
     </div>
     <script src="js/mistnost.js"></script>

@@ -8,7 +8,7 @@
   --dark-gray: #303030;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -75,7 +75,6 @@ body {
 
 
 
-
 /*----------------------------------*/
 /*TABLE*/
 /*----------------------------------*/
@@ -138,13 +137,12 @@ body {
 
 
 
-
 /*----------------------------------*/
 /*HOME PAGE*/
 /*----------------------------------*/
 
 .home-page {
-  background-image: url(images/home-bg.png);
+  background-image: url(images/koupena.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -266,4 +264,69 @@ body {
     .detail-img {
     width: 50%;
   }
+}
+
+/*----------------------------------*/
+/*DIALOG*/
+/*----------------------------------*/
+
+.dialog {
+  background-color: white;
+  box-shadow: 5px 5px 15px #00000080;
+  padding: 20px;
+  border-radius: 6px;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+}
+
+.dialog-close {
+  background-color: crimson;
+  color: #FFFFFF;
+  border: none;
+  font-size: 20px;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+
+}
+
+.tiles {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.tile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tile-content {
+  flex-grow: 1;
+}
+
+.tile-img {
+  width: 100px;
+}
+
+.tile-name {
+  margin-block: 5px;
+  font-size: 18px;
+}
+
+.tile-maker {
+  margin-block: 5px;
+  font-size: 14px;
+  color: var(--medium-gray);
+}
+
+.tile-price {
+  margin-block: 5px;
 }
