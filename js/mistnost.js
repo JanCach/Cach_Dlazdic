@@ -3,13 +3,13 @@ const API_KEY = "8vXE7RJTKmGmhWgPHrBZ"
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
-
+//console.log(id)
 const form = document.querySelector('#form')
 const formName = document.querySelector('#form-name')
 const roomName = document.querySelector('#name')
 const width = document.querySelector('#width')
-const lenght = document.querySelector('#lenght')
-const height = document.querySelector('#height')
+const length = document.querySelector('#length')
+const heigth = document.querySelector('#height')
 const joint = document.querySelector('#joint')
 const floorTileBtn = document.querySelector('#floor-tile-btn')
 const floorTile = document.querySelector('#floor-tile')
@@ -42,6 +42,7 @@ getTiles();
 if (id) {
     // editace existující misnosti
     formName.textContent = "Úprava existující místnosti"
+    getRoom(id);
 }
 else {
     // přidání nové misnosti
@@ -54,7 +55,7 @@ async function saveRoom(event) {
     event.preventDefault()
     const nameVal = roomName.value
     const widthVal = Number(width.value)
-    const lenghtVal = Number(lenght.value)
+    const lengthVal = Number(length.value)
     const heightVal = Number(height.value)
     const jointVal = Number(joint.value)
     const floorId = Number(floorTileId.value)
@@ -70,7 +71,7 @@ async function saveRoom(event) {
         errors += "<li>šířka místnosti musí být větší než nula</li>"
     }
 
-    if (!(lenghtVal>0)) {
+    if (!(lengthVal>0)) {
         errors += "<li>délka místnosti musí být větší než nula</li>"
     }
 
@@ -97,22 +98,40 @@ async function saveRoom(event) {
     const room = {
         name: nameVal,
         width: widthVal,
-        length: lenghtVal,
+        length: lengthVal,
         height: heightVal,
         joint_width: jointVal,
         floor_tile_id: floorId,
         wall_tile_id: wallId,
     }
 
-    const response = await fetch(API + "/rooms", {
-        method: "post",
-        headers: {
-            "Content-Type" : "application/json",
-            "x-api-key" : API_KEY
-        },
-        body: JSON.stringify(room)
-    });
-    console.log(response)
+    if (id) {
+        //úprava exitující místnosti
+        const response = await fetch(API + "/rooms/" + id, {
+            method: "put",
+            headers: {
+                "Content-Type" : "application/json",
+                "x-api-key" : API_KEY
+            },
+            body: JSON.stringify(room)
+        });
+        console.log(response)
+    }
+
+    else {
+        //vytvoření nové místnosti
+        const response = await fetch(API + "/rooms", {
+            method: "post",
+            headers: {
+                "Content-Type" : "application/json",
+                "x-api-key" : API_KEY
+            },
+            body: JSON.stringify(room)
+        });
+        console.log(response)
+    }
+    //při úspěšném uložením přesměrujeme na stránku můj dům
+    window.location.href = `mujdum.html`
 }
 
 floorTileBtn.addEventListener('click', ()=>{
@@ -177,4 +196,27 @@ function selectTile(tile) {
         wallTileId.value = tile.id;
     }
     closeDialog();
+}
+
+async function getRoom(id) {
+    const response = await fetch(API + "/rooms/" + id);
+    const json = await response.json();
+
+    roomName.value = json.name
+    width.value = json.width
+    length.value = json.length
+    height.value = json.height
+    joint.value = json.joint_width
+
+    floorTileId.value = json.floor_tile.id
+    floorTileImg.src = json.floor_tile.image
+    floorTileName.textContent = json.floor_tile.name
+    floorTileSize.textContent = `${json.floor_tile.width} x ${json.floor_tile.height} cm`
+    floorTilePrice.innerHTML = `${json.floor_tile.price} Kč/m<sup>2</sup>`;
+
+    wallTileId.value = json.wall_tile.id
+    wallTileImg.src = json.wall_tile.image
+    wallTileName.textContent = json.wall_tile.name
+    wallTileSize.textContent = `${json.wall_tile.width} x ${json.wall_tile.height} cm`
+    wallTilePrice.innerHTML = `${json.wall_tile.price} Kč/m<sup>2</sup>`;
 }

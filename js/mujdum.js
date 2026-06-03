@@ -1,6 +1,6 @@
 const API = "https://cach.czchts.cz/api";
 const API_KEY = "8vXE7RJTKmGmhWgPHrBZ"
-const roomsTable = document.querySelector('.table') 
+const roomsTable = document.querySelector('.table tbody')
 
 let currentRooms = [];
 
@@ -17,9 +17,17 @@ function showRooms(rooms) {
     roomsTable.innerHTML = "";
 
     rooms.forEach(room => {
+        let floorArea = (room.width/100) * (room.length/100)
+        let wallArea = (room.width/100) * (room.height/100) * 2 + (room.length/100) * (room.height/100) * 2
+
+        let floorPrice = room.floor_tile == null ? null : floorArea * room.floor_tile.price
+        let wallPrice = room.wall_tile == null ? null : wallArea * room.wall_tile.price
+
         const tr = document.createElement('tr')
         tr.innerHTML = `
         <td>${room.name}</td>
+        <td>${floorArea} m<sup>2</sup><br>${floorPrice} Kč</td>
+        <td></td>
         <td> 
             <button class="button edit"><i class="fa-solid fa-pen-to-square"></i> Upravit</button>
             <button class="button delete"><i class="fa-solid fa-trash"></i> Smazat</button> 
