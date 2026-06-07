@@ -52,7 +52,35 @@ Obsahuje JavaScriptové soubory jednotlivých stránek aplikace:
 ---
 ## Popis fungování aplikace
 
+Všechno začíná na úvodní stránce (index.html), kde jsou dvě tlačítka.
 
+Pomocí prvního tlačítka "Katalog produktů" si můžeme prohlížet co všechno máme za produkty. Po načtení stránky se zavolá API a načte se seznam produktů.
+U každého produktu si lze prohlédnout detaily.
+
+Druhé tlačítko "Můj dům" otevře přehled dláždic v domě uživatele.
+Na stránce mujdum se po načtení stránky zavolá API a načte se seznam místností, které si uživatel předtím uložil.
+
+Všechny místnosti se postupně projdou a pro každou se přidá do HTML řádek  tabulky s údaji o místnosti.
+
+Každý řádek tabulky má na konci 2 tlačítka, jedno pro úpravu místnosti a druhé pro smazání místnosti.
+
+Tlačítko Smazat zavolá funkci, která pošle na API request typu DELETE a předá id místnosti, kterou chce uživatel smazat.
+
+Tlačítko Upravit přesměruje prohlížeč na stránku 
+mistnost.html a do adresy přidá parametr id místnosti, která se má upravit. mistnost.html?id=1. Používáme request typu PUT. 
+
+Pro každou místnost se spočítá plocha dlažby (plocha podlahy) a plocha obkladů (plocha 4 stěn místnosti do nastavené výšky).
+
+Celkovou cenu všech dlažeb a obkladů se sečte a zobrazí pod tabulkou.
+Pod tabulkou je tlačítko Nová místnost, které přesměruje prohlížeč na stránku mistnost.html, ale nepřidává se do adresy žádný parametr id.
+
+Při vybírání dlaždiček, otevřeme dialogové okno se seznamem dlaždiček. Dialogové okno je vytvořené pomocí divu, který je skrytý do kterého jsme při otevření stránky načetli z API seznam dlaždiček.
+
+Při výběru dlažby se dialogové okno zviditelní. Při kliknutí na vybranou dlaždičku se její údaje zapíšou do prvku pod dialogovým oknem.
+
+Vyskakovácí okno má v pravém horním rohu křížek, kterým lze zavřít okno.
+
+U každé položky je tlačítko vybrat, které vepíše informace o dláždičce do stránky.
 
 ---
 

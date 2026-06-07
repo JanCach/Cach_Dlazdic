@@ -9,6 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Barva prohlížeče (adresní lišta na Androidu) -->
+    <meta name="theme-color" content="#FFB700">
+
+    <!-- Fallback ikona / iOS, který manifest ignoruje -->
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
     <div class="page-wrapper">
@@ -45,7 +59,8 @@
                 <button id="floor-tile-btn" class="button">Vybrat dlažbu</button>
                 <input type="hidden" id="floor-tile-id">
                 <div id="floor-tile" class="form-tile">
-                    <img src="images/dlaszbitch.webp" alt="" id="floor-tile-img" class="form-tile-img">
+                    <img src="images/vyber_dlazby.png"
+                    alt="" id="floor-tile-img" class="form-tile-img">
                     <div class="form-tile-text">
                         <h3 id="floor-tile-name" class="form-tile-name"></h3>
                         <p id="floor-tile-size" class="form-tile-size"></p>
@@ -57,7 +72,7 @@
                 <button id="wall-tile-btn" class="button">Vybrat obklad</button>
                 <input type="hidden" id="wall-tile-id">
                 <div id="wall-tile" class="form-tile">
-                    <img src="images/dlaszbitch.webp" alt="" id="wall-tile-img" class="form-tile-img">
+                    <img src="images/vyber_obkladu.png" alt="" id="wall-tile-img" class="form-tile-img">
                     <div class="form-tile-text">
                         <h3 id="wall-tile-name" class="form-tile-name"></h3>
                         <p id="wall-tile-size" class="form-tile-size"></p>
@@ -72,6 +87,7 @@
         <div class="dialog">
             <button class="dialog-close">x</button>
             <div class="tiles">
+                <!--
                 <div class="tile">
                     <img src="images/dlaszbitch.webp" alt="" class="tile-img">
                     <div class="tile-content">
@@ -80,11 +96,22 @@
                         <p class = "tile-price">9 999 Kč za m<sup>2</sup></p>
                     </div>
                     <button class="button">Detail</button>
-                </div>
+                </div> 
+                -->
             </div>
         </div>
     </main>
     </div>
     <script src="js/mistnost.js"></script>
+    <script>
+    // Registrace proběhne jen pokud ji prohlížeč podporuje
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+         .then(reg => console.log("Service Worker zaregistrován!", reg))
+         .catch(err => console.log("Registrace selhala:", err));
+      });
+    }
+    </script>
 </body>
 </html>

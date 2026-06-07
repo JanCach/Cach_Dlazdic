@@ -28,20 +28,10 @@
     <header class="header">
         <img src="images/logo_cach.svg" alt="logo" class="logo">
     </header>
-    <main class="main home-page">
-      <a class="button" href="katalog.html">Katalog produktů</a>
-      <a class="button" href="mujdum.html">Můj dům</a>
+    <main class="main">
+        <h2>Jste offline</h2>
+        <p>Aplikace vyžaduje připojení k internetu.</p>
     </main>
     </div>
-    <script>
-    // Registrace proběhne jen pokud ji prohlížeč podporuje
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js")
-         .then(reg => console.log("Service Worker zaregistrován!", reg))
-         .catch(err => console.log("Registrace selhala:", err));
-      });
-    }
-    </script>
 </body>
 </html>
