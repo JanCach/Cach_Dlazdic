@@ -84,6 +84,7 @@ U každé položky je tlačítko vybrat, které vepíše informace o dláždičc
 
 ## Možná vylepšení do budoucnosti
 
+- Lepší zobrazení na mobilu
 - Doplnit seznam produktů, aplikace teď obsahuje jenom 16 ukázkových dlaždiček.
 - Filtrování dlaždiček podle výrobce, barvy a dalších parametrů. 
 - Zatím se plocha obkladů počítá primitivně jenom z rozměrů místnosti a nebere ohled na dveře, okna, atd.
