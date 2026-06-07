@@ -82,6 +82,15 @@ Vyskakovácí okno má v pravém horním rohu křížek, kterým lze zavřít ok
 
 U každé položky je tlačítko vybrat, které vepíše informace o dláždičce do stránky.
 
+## Možná vylepšení do budoucnosti
+
+- Doplnit seznam produktů, aplikace teď obsahuje jenom 16 ukázkových dlaždiček.
+- Filtrování dlaždiček podle výrobce, barvy a dalších parametrů. 
+- Zatím se plocha obkladů počítá primitivně jenom z rozměrů místnosti a nebere ohled na dveře, okna, atd.
+- Zatím je aplikace pouze pro jednoho uživatele. Do budoucna přidat registraci a login, aby každý uživatel měl vlastní
+dům.
+- Mohl bych vylepšit design.
+
 ---
 
 # Dokumentace API
