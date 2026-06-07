@@ -134,13 +134,15 @@ async function saveRoom(event) {
     window.location.href = `mujdum.html`
 }
 
-floorTileBtn.addEventListener('click', ()=>{
+floorTileBtn.addEventListener('click', (event)=>{
+    event.preventDefault()
     selectedType = "floor"
     openDialog();
 })
 dialogCloseBtn.addEventListener('click', closeDialog)
 
-wallTileBtn.addEventListener('click', ()=>{
+wallTileBtn.addEventListener('click', (event)=>{
+    event.preventDefault()
     selectedType = "wall"
     openDialog();
 })
